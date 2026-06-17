@@ -3,27 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>5 тканей, которые убьёт домашняя стирка — Пятн.OFF</title>
+<title>Досье повреждений: 5 тканей — Пятн.OFF</title>
 <meta property="og:title" content="5 тканей, которые убьёт домашняя стирка">
-<meta property="og:description" content="Бесплатный гайд от технологов Пятн.OFF — Астана">
+<meta property="og:description" content="Досье повреждений от технологов Пятн.OFF — Астана">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --ink: #0f0e0d;
-    --ink-soft: #3a3836;
-    --ink-muted: #7a7470;
-    --bg: #faf9f7;
-    --cream: #f2ede6;
-    --accent: #c8401a;
-    --accent-dim: rgba(200, 64, 26, 0.10);
-    --border: rgba(15,14,13,0.10);
-    --radius: 3px;
-    --font-display: 'Unbounded', sans-serif;
+    --bg: #16140f;
+    --bg-card: #1c1a14;
+    --paper: #f3ede1;
+    --ink: #ebe5d6;
+    --ink-dim: #a9a18c;
+    --ink-faint: #6e6858;
+    --rust: #b5601e;
+    --rust-bright: #d97a2e;
+    --thread: #3d3829;
+    --ok-green: #6b8c5a;
+    --font-display: 'Fraunces', serif;
     --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
   }
 
   html { scroll-behavior: smooth; }
@@ -33,400 +35,573 @@
     color: var(--ink);
     font-family: var(--font-body);
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 800px 600px at 15% 0%, rgba(181,96,30,0.07), transparent),
+      radial-gradient(ellipse 600px 500px at 90% 30%, rgba(181,96,30,0.04), transparent);
   }
 
-  /* ── HEADER BAND ── */
-  .top-band {
-    background: var(--ink);
-    color: var(--bg);
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  /* subtle woven-thread texture overlay */
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.035;
+    background-image:
+      repeating-linear-gradient(0deg, #fff 0px, transparent 1px, transparent 2px, #fff 3px),
+      repeating-linear-gradient(90deg, #fff 0px, transparent 1px, transparent 2px, #fff 3px);
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar {
     position: sticky;
     top: 0;
     z-index: 100;
+    background: rgba(22,20,15,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--thread);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  .top-band .logo {
-    font-family: var(--font-display);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    color: var(--bg);
-    text-decoration: none;
+  .top-bar .mark {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--ink-dim);
+    text-transform: uppercase;
   }
-  .top-band .logo span { color: var(--accent); }
-  .wa-btn-small {
-    background: #25D366;
-    color: #fff;
-    font-family: var(--font-body);
-    font-size: 12px;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 40px;
+  .top-bar .mark strong { color: var(--rust-bright); }
+  .wa-chip {
+    background: transparent;
+    border: 1px solid var(--thread);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    padding: 7px 14px;
+    border-radius: 2px;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 7px;
-    transition: opacity 0.18s cubic-bezier(0.16,1,0.3,1), transform 0.18s cubic-bezier(0.16,1,0.3,1);
-    white-space: nowrap;
+    gap: 8px;
+    transition: border-color 0.2s cubic-bezier(0.16,1,0.3,1), background 0.2s cubic-bezier(0.16,1,0.3,1);
   }
-  .wa-btn-small:active { transform: scale(0.97); opacity: 0.88; }
-  .wa-icon { width: 15px; height: 15px; flex-shrink: 0; }
+  .wa-chip:hover { border-color: var(--rust-bright); background: rgba(181,96,30,0.08); }
+  .wa-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ok-green); flex-shrink: 0; }
 
   /* ── HERO ── */
   .hero {
-    padding: 56px 24px 48px;
-    max-width: 680px;
+    max-width: 760px;
     margin: 0 auto;
-    border-bottom: 1px solid var(--border);
+    padding: 72px 28px 56px;
+    position: relative;
   }
-  .eyebrow {
-    font-family: var(--font-display);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 20px;
+  .case-number {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--rust-bright);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .case-number::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--thread);
   }
   .hero h1 {
     font-family: var(--font-display);
-    font-size: clamp(26px, 6vw, 46px);
+    font-optical-sizing: auto;
     font-weight: 900;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    margin-bottom: 24px;
+    font-size: clamp(36px, 7vw, 64px);
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    color: var(--paper);
+    margin-bottom: 28px;
   }
-  .hero h1 em {
-    font-style: normal;
-    color: var(--accent);
+  .hero h1 .strike-wrap {
+    position: relative;
+    display: inline-block;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--ink-dim);
+  }
+  .hero h1 .strike-wrap::after {
+    content: '';
+    position: absolute;
+    left: -2%;
+    right: -2%;
+    top: 52%;
+    height: 2px;
+    background: var(--rust);
+    transform: rotate(-2deg);
   }
   .hero-lead {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.75;
-    color: var(--ink-soft);
-    max-width: 560px;
+    color: var(--ink-dim);
+    max-width: 540px;
     margin-bottom: 32px;
   }
-  .hero-note {
-    font-size: 13px;
-    color: var(--ink-muted);
-    border-left: 2px solid var(--accent);
-    padding-left: 14px;
-    line-height: 1.6;
-  }
-
-  /* ── FABRIC SECTIONS ── */
-  .guide-body {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  .fabric-block {
-    padding: 44px 0;
-    border-bottom: 1px solid var(--border);
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1);
-  }
-  .fabric-block.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .fabric-num {
-    font-family: var(--font-display);
+  .hero-meta {
+    display: flex;
+    gap: 28px;
+    font-family: var(--font-mono);
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    color: var(--ink-muted);
-    margin-bottom: 8px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+    border-top: 1px solid var(--thread);
+    padding-top: 20px;
   }
-  .fabric-name {
-    font-family: var(--font-display);
-    font-size: clamp(18px, 4vw, 26px);
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin-bottom: 28px;
-  }
+  .hero-meta span { margin-right: 4px; }
+  .hero-meta span strong { color: var(--ink-dim); font-weight: 500; }
 
-  .spin-row {
-    margin-bottom: 20px;
+  /* ── INDEX STRIP ── */
+  .index-strip {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px 8px;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
   }
-  .spin-label {
-    display: inline-block;
-    font-family: var(--font-display);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--bg);
-    background: var(--ink-soft);
-    padding: 3px 8px;
+  .index-strip::-webkit-scrollbar { display: none; }
+  .index-pill {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    border: 1px solid var(--thread);
+    padding: 6px 12px;
     border-radius: 2px;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .index-pill:hover { color: var(--rust-bright); border-color: var(--rust); }
+
+  /* ── CASE FILES ── */
+  .files {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 28px 20px;
+  }
+
+  .case {
+    border-top: 1px solid var(--thread);
+    padding: 56px 0;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+  .case.visible { opacity: 1; transform: translateY(0); }
+  .case:first-child { border-top: none; }
+
+  .case-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
     margin-bottom: 8px;
   }
-  .spin-label.danger { background: var(--accent); }
-  .spin-label.solution { background: #1a6b3c; }
+  .case-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+  }
+  .case-severity {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    padding: 4px 9px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .sev-critical { background: rgba(181,96,30,0.15); color: var(--rust-bright); border: 1px solid rgba(181,96,30,0.3); }
+  .sev-high { background: rgba(181,96,30,0.10); color: var(--rust-bright); border: 1px solid rgba(181,96,30,0.2); }
 
-  .spin-text {
+  .case-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(28px, 5.5vw, 42px);
+    line-height: 1.05;
+    color: var(--paper);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+
+  /* damage gauge */
+  .gauge-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 36px;
+    padding: 16px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--thread);
+    border-radius: 3px;
+  }
+  .gauge-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .gauge-track {
+    flex: 1;
+    height: 6px;
+    background: var(--thread);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+  }
+  .gauge-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--rust), var(--rust-bright));
+    border-radius: 3px;
+    width: 0;
+    transition: width 1.1s cubic-bezier(0.16,1,0.3,1);
+  }
+  .case.visible .gauge-fill { width: var(--fill); }
+  .gauge-pct {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--rust-bright);
+    white-space: nowrap;
+    min-width: 44px;
+    text-align: right;
+  }
+
+  .field {
+    display: grid;
+    grid-template-columns: 124px 1fr;
+    gap: 20px;
+    padding: 22px 0;
+    border-top: 1px solid var(--thread);
+  }
+  .field:first-of-type { border-top: none; padding-top: 0; }
+  .field-key {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.07em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    padding-top: 3px;
+  }
+  .field-key.danger { color: var(--rust-bright); }
+  .field-key.fix { color: var(--ok-green); }
+  .field-val {
     font-size: 15px;
     line-height: 1.72;
-    color: var(--ink-soft);
-  }
-  .spin-text strong {
     color: var(--ink);
+  }
+  .field-val strong {
+    color: var(--paper);
+    font-weight: 600;
+  }
+  .field-val em {
+    font-family: var(--font-display);
+    font-style: italic;
     font-weight: 500;
+    color: var(--rust-bright);
   }
 
-  /* ── CTA BLOCK ── */
-  .cta-block {
-    background: var(--ink);
-    border-radius: 6px;
-    padding: 40px 32px;
-    margin: 48px 0 64px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1);
+  @media (max-width: 560px) {
+    .field { grid-template-columns: 1fr; gap: 6px; }
+    .field-key { padding-top: 0; }
   }
-  .cta-block.visible { opacity: 1; transform: translateY(0); }
 
-  .cta-block .cta-eyebrow {
-    font-family: var(--font-display);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.20em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 14px;
+  /* ── CTA ── */
+  .verdict {
+    max-width: 760px;
+    margin: 32px auto 64px;
+    padding: 0 28px;
   }
-  .cta-block h2 {
-    font-family: var(--font-display);
-    font-size: clamp(20px, 4.5vw, 30px);
-    font-weight: 900;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
+  .verdict-card {
+    background: var(--paper);
     color: var(--bg);
-    margin-bottom: 16px;
+    border-radius: 4px;
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
   }
-  .cta-block p {
-    font-size: 14px;
+  .verdict-card.visible { opacity: 1; transform: translateY(0); }
+  .verdict-stamp {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--rust);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .verdict-card h2 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(24px, 5vw, 34px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+    max-width: 480px;
+  }
+  .verdict-card p {
+    font-size: 15px;
     line-height: 1.7;
-    color: rgba(250,249,247,0.60);
-    margin-bottom: 28px;
-    max-width: 420px;
-    margin-left: auto;
-    margin-right: auto;
+    color: #4a4538;
+    max-width: 460px;
+    margin-bottom: 32px;
   }
-
   .wa-btn-main {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: #25D366;
-    color: #fff;
-    font-family: var(--font-display);
+    background: var(--bg);
+    color: var(--paper);
+    font-family: var(--font-mono);
     font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    padding: 16px 28px;
-    border-radius: 40px;
+    letter-spacing: 0.03em;
+    padding: 16px 26px;
+    border-radius: 3px;
     text-decoration: none;
-    transition: opacity 0.18s cubic-bezier(0.16,1,0.3,1), transform 0.18s cubic-bezier(0.16,1,0.3,1);
+    transition: transform 0.18s cubic-bezier(0.16,1,0.3,1), background 0.18s cubic-bezier(0.16,1,0.3,1);
   }
-  .wa-btn-main:active { transform: scale(0.97); opacity: 0.88; }
-  .wa-btn-main svg { width: 20px; height: 20px; }
+  .wa-btn-main:hover { background: #000; transform: translateY(-1px); }
+  .wa-btn-main:active { transform: translateY(0) scale(0.98); }
+  .wa-btn-main svg { width: 18px; height: 18px; flex-shrink: 0; margin-right: 2px; }
 
-  .cta-divider {
-    border: none;
-    border-top: 1px solid rgba(250,249,247,0.10);
-    margin: 28px auto;
-    max-width: 200px;
-  }
-  .cta-alt {
+  .verdict-alt {
+    margin-top: 22px;
     font-size: 13px;
-    color: rgba(250,249,247,0.45);
+    color: #6b6557;
   }
-  .cta-alt a {
-    color: rgba(250,249,247,0.70);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
+  .verdict-alt a { color: var(--bg); text-decoration: underline; text-underline-offset: 3px; }
 
   /* ── FOOTER ── */
   .footer {
-    border-top: 1px solid var(--border);
-    padding: 24px;
-    text-align: center;
-    max-width: 680px;
+    border-top: 1px solid var(--thread);
+    padding: 28px 28px 48px;
+    max-width: 760px;
     margin: 0 auto;
+    text-align: center;
   }
   .footer p {
-    font-size: 12px;
-    color: var(--ink-muted);
-    line-height: 1.6;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.03em;
+    line-height: 1.7;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .fabric-block, .cta-block {
-      opacity: 1; transform: none; transition: none;
-    }
+    .case, .verdict-card { opacity: 1; transform: none; transition: none; }
+    .gauge-fill { transition: none; width: var(--fill); }
   }
 
   @media (max-width: 480px) {
-    .hero { padding: 40px 20px 36px; }
-    .guide-body { padding: 0 20px; }
-    .cta-block { padding: 32px 20px; }
-    .top-band { padding: 10px 16px; }
+    .hero { padding: 56px 20px 44px; }
+    .files { padding: 40px 20px 0; }
+    .verdict { padding: 0 20px; }
+    .verdict-card { padding: 36px 24px; }
+    .top-bar { padding: 12px 16px; }
+    .top-bar .mark { font-size: 10px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ── TOP BAND ── -->
-<header class="top-band">
-  <a class="logo" href="#">Пятн<span>.</span>OFF</a>
-  <a class="wa-btn-small" href="https://wa.me/77750610610?text=Здравствуйте%2C+хочу+проконсультироваться+по+уходу+за+вещью" target="_blank" rel="noopener">
-    <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-    Консультация
+<div class="grain"></div>
+
+<header class="top-bar">
+  <span class="mark">ПЯТН<strong>.</strong>OFF — ДОСЬЕ №05</span>
+  <a class="wa-chip" href="https://wa.me/77750610610?text=Здравствуйте%2C+хочу+проконсультироваться+по+уходу+за+вещью" target="_blank" rel="noopener">
+    <span class="dot"></span>Технолог онлайн
   </a>
 </header>
 
-<!-- ── HERO ── -->
 <section class="hero">
-  <p class="eyebrow">Бесплатный гайд · Пятн.OFF · Астана</p>
-  <h1>5 тканей, которые<br><em>навсегда убьёт</em><br>домашняя стирка</h1>
+  <p class="case-number">АСТАНА / АРХИВ ПОВРЕЖДЕНИЙ</p>
+  <h1>5 тканей,<br>которые <span class="strike-wrap">не выживут</span><br>домашнюю стирку</h1>
   <p class="hero-lead">
-    Производители пишут «стирать при 30°» — и это правда для лабораторных условий. Ваша вещь уже носилась, впитала парфюм, пот, городскую пыль. Для неё эти 30° не бережный режим. Это приговор.
+    На бирке написано «30°, деликатный режим» — и это правда. Для лаборатории, где тестировали новую ткань без единого загрязнения. Ваша вещь уже носилась. Для неё это не инструкция. Это протокол разрушения.
   </p>
-  <p class="hero-note">
-    Разбор от технологов с 8-летним опытом работы с деликатными тканями. Без рекламы и химических терминов ради терминов — только то, что реально происходит с волокном.
-  </p>
+  <div class="hero-meta">
+    <span>Случаев в архиве: <strong>5</strong></span>
+    <span>Источник: <strong>технологи Пятн.OFF</strong></span>
+    <span>Статус: <strong>открыто</strong></span>
+  </div>
 </section>
 
-<!-- ── GUIDE BODY ── -->
-<main class="guide-body">
+<nav class="index-strip">
+  <a class="index-pill" href="#case-01">01 Кашемир</a>
+  <a class="index-pill" href="#case-02">02 Шёлк</a>
+  <a class="index-pill" href="#case-03">03 Пух/мембрана</a>
+  <a class="index-pill" href="#case-04">04 Вискоза</a>
+  <a class="index-pill" href="#case-05">05 Кожа+текстиль</a>
+</nav>
 
-  <!-- 1. КАШЕМИР -->
-  <article class="fabric-block">
-    <p class="fabric-num">01 / 05</p>
-    <h2 class="fabric-name">Кашемир и тонкая шерсть</h2>
+<main class="files">
 
-    <div class="spin-row">
-      <span class="spin-label">Типичная ошибка</span>
-      <p class="spin-text">Замачивают в тазу с «нежной» капсулой. Трут пятно. Потом отжимают, скручивая. Сушат на горизонтальной поверхности — или на плечиках.</p>
+  <!-- CASE 01 -->
+  <article class="case" id="case-01" style="--fill:78%">
+    <div class="case-head">
+      <span class="case-tag">ДЕЛО 01 / ВОЛОКНО: БЕЛОК</span>
+      <span class="case-severity sev-critical">Необратимо</span>
+    </div>
+    <h2 class="case-title">Кашемир и тонкая шерсть</h2>
+
+    <div class="gauge-row">
+      <span class="gauge-label">Риск порчи</span>
+      <div class="gauge-track"><div class="gauge-fill"></div></div>
+      <span class="gauge-pct">78%</span>
     </div>
 
-    <div class="spin-row">
-      <span class="spin-label danger">Что происходит с тканью</span>
-      <p class="spin-text">Кашемировое волокно покрыто микроскопическими чешуйками, как еловая шишка. Тёплая вода плюс механическое воздействие — чешуйки раскрываются и намертво сцепляются. Это <strong>свойлачивание</strong>. Оно необратимо. Свитер за 80 000 ₸ становится детским за один цикл. Дополнительно: большинство «нежных» порошков содержат <strong>протеазы</strong> — ферменты, расщепляющие белок. Шерсть и кашемир — это белок. Вы буквально перевариваете свою вещь.</p>
+    <div class="field">
+      <span class="field-key">Ошибка</span>
+      <p class="field-val">Замачивают в тазу с «нежной» капсулой, трут пятно, отжимают скручиванием. Сушат на плечиках или горизонтально на батарее.</p>
     </div>
-
-    <div class="spin-row">
-      <span class="spin-label solution">Как решаем мы</span>
-      <p class="spin-text">Сухая чистка на основе <strong>перхлорэтилена</strong> — без воды вообще. Чешуйки не раскрываются, структура сохраняется. Для точечных загрязнений — ручная работа с pH-нейтральными составами под контролем технолога.</p>
+    <div class="field">
+      <span class="field-key danger">Разрушение</span>
+      <p class="field-val">Волокно кашемира покрыто микрочешуйками, как еловая шишка. Тёплая вода и трение раскрывают их и сцепляют навсегда — это <strong>свойлачивание</strong>, оно необратимо. Свитер за 80 000 ₸ становится детским за один цикл. Большинство «нежных» порошков содержат <em>протеазы</em> — ферменты, расщепляющие белок. Шерсть — это белок. Вы его перевариваете.</p>
     </div>
-  </article>
-
-  <!-- 2. ШЁЛК -->
-  <article class="fabric-block">
-    <p class="fabric-num">02 / 05</p>
-    <h2 class="fabric-name">Натуральный шёлк</h2>
-
-    <div class="spin-row">
-      <span class="spin-label">Типичная ошибка</span>
-      <p class="spin-text">Локально заливают пятно холодной водой и трут. Или — популярный совет из интернета — замачивают в воде с уксусом «для закрепления цвета».</p>
-    </div>
-
-    <div class="spin-row">
-      <span class="spin-label danger">Что происходит с тканью</span>
-      <p class="spin-text">Шёлк имеет треугольное поперечное сечение волокна — именно это даёт блеск. При локальном намокании вода проникает неравномерно, меняет натяжение нитей. После высыхания остаётся <strong>постоянный водяной контур</strong>. Не пятно от грязи — пятно от воды. В домашних условиях убрать его невозможно. Уксус — кислота. Шёлк разрушается в кислой среде. «Закрепить цвет» уксусом — городской миф из эпохи анилиновых красителей XIX века.</p>
-    </div>
-
-    <div class="spin-row">
-      <span class="spin-label solution">Как решаем мы</span>
-      <p class="spin-text">Аквачистка в специализированном оборудовании с <strong>контролируемым увлажнением всего изделия одновременно</strong> — никаких локальных пятен от воды. Для деликатных принтов — исключительно сухая чистка перхлором.</p>
+    <div class="field">
+      <span class="field-key fix">Восстановление</span>
+      <p class="field-val">Сухая чистка на основе <strong>перхлорэтилена</strong> — без воды вообще. Чешуйки не раскрываются. Точечные загрязнения — ручная работа технолога с pH-нейтральными составами.</p>
     </div>
   </article>
 
-  <!-- 3. ПУХ / МЕМБРАНА -->
-  <article class="fabric-block">
-    <p class="fabric-num">03 / 05</p>
-    <h2 class="fabric-name">Пуховики и мембранные куртки</h2>
+  <!-- CASE 02 -->
+  <article class="case" id="case-02" style="--fill:65%">
+    <div class="case-head">
+      <span class="case-tag">ДЕЛО 02 / ВОЛОКНО: ШЁЛК</span>
+      <span class="case-severity sev-high">Высокий риск</span>
+    </div>
+    <h2 class="case-title">Натуральный шёлк</h2>
 
-    <div class="spin-row">
-      <span class="spin-label">Типичная ошибка</span>
-      <p class="spin-text">Стирают в машине на деликатном режиме. Сушат на батарее или балконе. Пух слипается в комки — изделие теряет форму и тепло навсегда.</p>
+    <div class="gauge-row">
+      <span class="gauge-label">Риск порчи</span>
+      <div class="gauge-track"><div class="gauge-fill"></div></div>
+      <span class="gauge-pct">65%</span>
     </div>
 
-    <div class="spin-row">
-      <span class="spin-label danger">Что происходит с тканью</span>
-      <p class="spin-text">Пух — не вата. Каждое пёрышко имеет трёхмерную структуру с воздушными карманами. Эти карманы и создают тепло. После стирки без специальных шаров пёрышки склеиваются жировыми выделениями и «запекаются» у батареи комками в нижней части куртки. Мембрана (Gore-Tex и аналоги): обычный порошок <strong>забивает поры</strong>. Куртка перестаёт дышать — навсегда. DWR-покрытие после домашней стирки требует реактивации, иначе вода уже не скатывается, а впитывается.</p>
+    <div class="field">
+      <span class="field-key">Ошибка</span>
+      <p class="field-val">Локально заливают пятно холодной водой и трут. Или — популярный совет из интернета — замачивают в воде с уксусом «для закрепления цвета».</p>
     </div>
-
-    <div class="spin-row">
-      <span class="spin-label solution">Как решаем мы</span>
-      <p class="spin-text">Стирка с составами, совместимыми с мембраной. Сушка в барабане с теннисными шарами для восстановления объёма пуха. <strong>Термо-реактивация DWR-покрытия.</strong> Куртка выходит как из магазина.</p>
+    <div class="field">
+      <span class="field-key danger">Разрушение</span>
+      <p class="field-val">Сечение шёлкового волокна — треугольное, это и даёт блеск. При локальном намокании вода входит неравномерно, меняет натяжение нитей. После сушки остаётся <strong>постоянный водяной контур</strong> — не пятно от грязи, пятно от воды. Дома его не убрать. Уксус — кислота, шёлк разрушается в кислой среде. Миф о «закреплении цвета» — из эпохи анилиновых красителей XIX века.</p>
     </div>
-  </article>
-
-  <!-- 4. ВИСКОЗА -->
-  <article class="fabric-block">
-    <p class="fabric-num">04 / 05</p>
-    <h2 class="fabric-name">Вискоза</h2>
-
-    <div class="spin-row">
-      <span class="spin-label">Типичная ошибка</span>
-      <p class="spin-text">Думают: «Это же не шёлк, можно в машину». Стирают при 30° в щадящем режиме. Вещь садится или деформируется.</p>
-    </div>
-
-    <div class="spin-row">
-      <span class="spin-label danger">Что происходит с тканью</span>
-      <p class="spin-text">Вискоза — искусственное волокно из целлюлозы. В сухом состоянии крепкая. В мокром — <strong>теряет до 50–70% прочности</strong>. Это не дефект конкретной вещи, это химическая природа материала. Механика машины на мокром волокне растягивает его намертво. Трикотаж из вискозы после одной машинной стирки может вырасти в длину на 10–15 см — или сесть так, что не налезет на плечи.</p>
-    </div>
-
-    <div class="spin-row">
-      <span class="spin-label solution">Как решаем мы</span>
-      <p class="spin-text">Ручная или аквачистка с минимальным механическим воздействием. Отжим без скручивания, сушка строго горизонтально в исходной форме. Для деформированных изделий — реставрационная заутюжка с паром.</p>
+    <div class="field">
+      <span class="field-key fix">Восстановление</span>
+      <p class="field-val">Аквачистка с <strong>контролируемым увлажнением всего изделия одновременно</strong> — контуров от воды не остаётся. Деликатные принты — только сухая чистка перхлором.</p>
     </div>
   </article>
 
-  <!-- 5. КОЖА + ТЕКСТИЛЬ -->
-  <article class="fabric-block">
-    <p class="fabric-num">05 / 05</p>
-    <h2 class="fabric-name">Кожа + текстиль в одном изделии</h2>
+  <!-- CASE 03 -->
+  <article class="case" id="case-03" style="--fill:71%">
+    <div class="case-head">
+      <span class="case-tag">ДЕЛО 03 / СТРУКТУРА: ПУХ + МЕМБРАНА</span>
+      <span class="case-severity sev-critical">Необратимо</span>
+    </div>
+    <h2 class="case-title">Пуховики и мембранные куртки</h2>
 
-    <div class="spin-row">
-      <span class="spin-label">Типичная ошибка</span>
-      <p class="spin-text">Пятно на текстильной части — протирают влажной губкой, не думая о кожаных вставках рядом.</p>
+    <div class="gauge-row">
+      <span class="gauge-label">Риск порчи</span>
+      <div class="gauge-track"><div class="gauge-fill"></div></div>
+      <span class="gauge-pct">71%</span>
     </div>
 
-    <div class="spin-row">
-      <span class="spin-label danger">Что происходит с тканью</span>
-      <p class="spin-text">Натуральная кожа — живой материал с жировой пропиткой. Вода вымывает эти жиры. После высыхания кожа жёсткая, появляются трещины. Анилиновая кожа (самая дорогая, без покрытия) реагирует особенно остро: вода оставляет на ней тёмные пятна, которые не убираются. Разные части изделия требуют <strong>разных температур и составов</strong> — то, что безопасно для ткани, разрушает кожу.</p>
+    <div class="field">
+      <span class="field-key">Ошибка</span>
+      <p class="field-val">Стирают на деликатном режиме в машине. Сушат на батарее или балконе. Пух слипается в комки, форма и тепло теряются навсегда.</p>
     </div>
-
-    <div class="spin-row">
-      <span class="spin-label solution">Как решаем мы</span>
-      <p class="spin-text">Каждый участок обрабатывается отдельно. Кожа — специализированными очистителями с кондиционированием. Текстиль — аквачисткой или перхлором в зависимости от состава волокна. Фурнитура защищается индивидуально. Это <strong>реставрационный подход</strong>, а не стирка.</p>
+    <div class="field">
+      <span class="field-key danger">Разрушение</span>
+      <p class="field-val">Пух — не вата, а трёхмерная структура с воздушными карманами, именно они держат тепло. После стирки без сушильных шаров пёрышки склеиваются жиром и «запекаются» у батареи. Мембрана (Gore-Tex и аналоги) теряет дыхание навсегда — обычный порошок <strong>забивает поры</strong>. DWR-покрытие после домашней стирки требует реактивации — иначе вода уже не скатывается, а впитывается.</p>
+    </div>
+    <div class="field">
+      <span class="field-key fix">Восстановление</span>
+      <p class="field-val">Составы, совместимые с мембраной. Сушка в барабане с теннисными шарами для объёма пуха. <strong>Термо-реактивация DWR.</strong> Куртка выходит как из магазина.</p>
     </div>
   </article>
 
-  <!-- ── CTA ── -->
-  <div class="cta-block">
-    <p class="cta-eyebrow">Пятн.OFF · Астана</p>
-    <h2>Есть вещь, за которую вы переживаете?</h2>
-    <p>Пришлите фото в WhatsApp — технолог бесплатно оценит состояние и честно скажет, что можно сделать. Без обязательств.</p>
+  <!-- CASE 04 -->
+  <article class="case" id="case-04" style="--fill:60%">
+    <div class="case-head">
+      <span class="case-tag">ДЕЛО 04 / ВОЛОКНО: ЦЕЛЛЮЛОЗА</span>
+      <span class="case-severity sev-high">Высокий риск</span>
+    </div>
+    <h2 class="case-title">Вискоза</h2>
+
+    <div class="gauge-row">
+      <span class="gauge-label">Риск порчи</span>
+      <div class="gauge-track"><div class="gauge-fill"></div></div>
+      <span class="gauge-pct">60%</span>
+    </div>
+
+    <div class="field">
+      <span class="field-key">Ошибка</span>
+      <p class="field-val">«Это не шёлк, можно в машину» — стирают при 30° на щадящем режиме. Вещь садится или растягивается.</p>
+    </div>
+    <div class="field">
+      <span class="field-key danger">Разрушение</span>
+      <p class="field-val">Вискоза — целлюлозное волокно. Сухой она крепкая. Мокрой — теряет <strong>до 50–70% прочности</strong>. Это не дефект конкретной вещи, это химия материала. Барабан машины растягивает мокрое волокно деформацией, которая не уходит после высыхания. Трикотаж из вискозы может вырасти на 10–15 см за один цикл — или сесть так, что не налезет.</p>
+    </div>
+    <div class="field">
+      <span class="field-key fix">Восстановление</span>
+      <p class="field-val">Ручная или аквачистка с минимальным механическим воздействием. Отжим без скручивания, сушка строго горизонтально. Деформации — реставрационная заутюжка паром.</p>
+    </div>
+  </article>
+
+  <!-- CASE 05 -->
+  <article class="case" id="case-05" style="--fill:82%">
+    <div class="case-head">
+      <span class="case-tag">ДЕЛО 05 / СОСТАВ: КОЖА + ТЕКСТИЛЬ</span>
+      <span class="case-severity sev-critical">Необратимо</span>
+    </div>
+    <h2 class="case-title">Комбинированные изделия</h2>
+
+    <div class="gauge-row">
+      <span class="gauge-label">Риск порчи</span>
+      <div class="gauge-track"><div class="gauge-fill"></div></div>
+      <span class="gauge-pct">82%</span>
+    </div>
+
+    <div class="field">
+      <span class="field-key">Ошибка</span>
+      <p class="field-val">Пятно на текстильной части протирают влажной губкой, не учитывая кожаные вставки рядом.</p>
+    </div>
+    <div class="field">
+      <span class="field-key danger">Разрушение</span>
+      <p class="field-val">Натуральная кожа — материал с жировой пропиткой. Вода вымывает жиры, после высыхания кожа жёсткая, появляются трещины. Анилиновая кожа (без покрытия, самая дорогая) реагирует острее всего: вода оставляет тёмные пятна навсегда. Разные части изделия требуют <strong>разных составов и температур</strong> — то, что спасает ткань, разрушает кожу.</p>
+    </div>
+    <div class="field">
+      <span class="field-key fix">Восстановление</span>
+      <p class="field-val">Каждый участок обрабатывается отдельно: кожа — очистителями с кондиционированием, текстиль — аквачисткой или перхлором. Фурнитура защищается индивидуально. Это <strong>реставрация</strong>, а не стирка.</p>
+    </div>
+  </article>
+
+</main>
+
+<section class="verdict">
+  <div class="verdict-card">
+    <p class="verdict-stamp">Заключение технолога</p>
+    <h2>Если вещь уже постирали дома — иногда ещё можно спасти.</h2>
+    <p>Пришлите фото в WhatsApp. Технолог честно скажет, что восстановимо, а что нет — без обязательств и навязывания услуг.</p>
 
     <a class="wa-btn-main" href="https://wa.me/77750610610?text=Здравствуйте%2C+хочу+проконсультироваться+по+уходу+за+вещью.+Прикладываю+фото." target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -434,19 +609,15 @@
       </svg>
       Написать технологу
     </a>
-
-    <hr class="cta-divider">
-    <p class="cta-alt">Или позвонить: <a href="tel:+77750610610">+7 775 061 0610</a></p>
+    <p class="verdict-alt">Или позвонить: <a href="tel:+77750610610">+7 775 061 0610</a></p>
   </div>
-
-</main>
+</section>
 
 <footer class="footer">
-  <p>© Пятн.OFF — химчистка, Астана<br>Гайд распространяется бесплатно. Поделитесь с тем, кому нужно.</p>
+  <p>ПЯТН.OFF — ХИМЧИСТКА, АСТАНА<br>ДОСЬЕ РАСПРОСТРАНЯЕТСЯ БЕСПЛАТНО · ПОДЕЛИТЕСЬ С ТЕМ, КОМУ НУЖНО</p>
 </footer>
 
 <script>
-  // Scroll-triggered reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -454,9 +625,9 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.fabric-block, .cta-block').forEach(el => observer.observe(el));
+  document.querySelectorAll('.case, .verdict-card').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
