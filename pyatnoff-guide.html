@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 тканей, которые убьёт домашняя стирка — Пятн.OFF</title>
+<meta property="og:title" content="5 тканей, которые убьёт домашняя стирка">
+<meta property="og:description" content="Бесплатный гайд от технологов Пятн.OFF — Астана">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0f0e0d;
+    --ink-soft: #3a3836;
+    --ink-muted: #7a7470;
+    --bg: #faf9f7;
+    --cream: #f2ede6;
+    --accent: #c8401a;
+    --accent-dim: rgba(200, 64, 26, 0.10);
+    --border: rgba(15,14,13,0.10);
+    --radius: 3px;
+    --font-display: 'Unbounded', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER BAND ── */
+  .top-band {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .top-band .logo {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--bg);
+    text-decoration: none;
+  }
+  .top-band .logo span { color: var(--accent); }
+  .wa-btn-small {
+    background: #25D366;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 40px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: opacity 0.18s cubic-bezier(0.16,1,0.3,1), transform 0.18s cubic-bezier(0.16,1,0.3,1);
+    white-space: nowrap;
+  }
+  .wa-btn-small:active { transform: scale(0.97); opacity: 0.88; }
+  .wa-icon { width: 15px; height: 15px; flex-shrink: 0; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 56px 24px 48px;
+    max-width: 680px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 6vw, 46px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .hero-lead {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    max-width: 560px;
+    margin-bottom: 32px;
+  }
+  .hero-note {
+    font-size: 13px;
+    color: var(--ink-muted);
+    border-left: 2px solid var(--accent);
+    padding-left: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── FABRIC SECTIONS ── */
+  .guide-body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .fabric-block {
+    padding: 44px 0;
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1);
+  }
+  .fabric-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fabric-num {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+  }
+  .fabric-name {
+    font-family: var(--font-display);
+    font-size: clamp(18px, 4vw, 26px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+
+  .spin-row {
+    margin-bottom: 20px;
+  }
+  .spin-label {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--ink-soft);
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+  }
+  .spin-label.danger { background: var(--accent); }
+  .spin-label.solution { background: #1a6b3c; }
+
+  .spin-text {
+    font-size: 15px;
+    line-height: 1.72;
+    color: var(--ink-soft);
+  }
+  .spin-text strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ── CTA BLOCK ── */
+  .cta-block {
+    background: var(--ink);
+    border-radius: 6px;
+    padding: 40px 32px;
+    margin: 48px 0 64px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1);
+  }
+  .cta-block.visible { opacity: 1; transform: translateY(0); }
+
+  .cta-block .cta-eyebrow {
+    font-family: var(--font-display);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .cta-block h2 {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 4.5vw, 30px);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--bg);
+    margin-bottom: 16px;
+  }
+  .cta-block p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(250,249,247,0.60);
+    margin-bottom: 28px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wa-btn-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 16px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: opacity 0.18s cubic-bezier(0.16,1,0.3,1), transform 0.18s cubic-bezier(0.16,1,0.3,1);
+  }
+  .wa-btn-main:active { transform: scale(0.97); opacity: 0.88; }
+  .wa-btn-main svg { width: 20px; height: 20px; }
+
+  .cta-divider {
+    border: none;
+    border-top: 1px solid rgba(250,249,247,0.10);
+    margin: 28px auto;
+    max-width: 200px;
+  }
+  .cta-alt {
+    font-size: 13px;
+    color: rgba(250,249,247,0.45);
+  }
+  .cta-alt a {
+    color: rgba(250,249,247,0.70);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .footer p {
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fabric-block, .cta-block {
+      opacity: 1; transform: none; transition: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 40px 20px 36px; }
+    .guide-body { padding: 0 20px; }
+    .cta-block { padding: 32px 20px; }
+    .top-band { padding: 10px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── TOP BAND ── -->
+<header class="top-band">
+  <a class="logo" href="#">Пятн<span>.</span>OFF</a>
+  <a class="wa-btn-small" href="https://wa.me/77750610610?text=Здравствуйте%2C+хочу+проконсультироваться+по+уходу+за+вещью" target="_blank" rel="noopener">
+    <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    Консультация
+  </a>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="eyebrow">Бесплатный гайд · Пятн.OFF · Астана</p>
+  <h1>5 тканей, которые<br><em>навсегда убьёт</em><br>домашняя стирка</h1>
+  <p class="hero-lead">
+    Производители пишут «стирать при 30°» — и это правда для лабораторных условий. Ваша вещь уже носилась, впитала парфюм, пот, городскую пыль. Для неё эти 30° не бережный режим. Это приговор.
+  </p>
+  <p class="hero-note">
+    Разбор от технологов с 8-летним опытом работы с деликатными тканями. Без рекламы и химических терминов ради терминов — только то, что реально происходит с волокном.
+  </p>
+</section>
+
+<!-- ── GUIDE BODY ── -->
+<main class="guide-body">
+
+  <!-- 1. КАШЕМИР -->
+  <article class="fabric-block">
+    <p class="fabric-num">01 / 05</p>
+    <h2 class="fabric-name">Кашемир и тонкая шерсть</h2>
+
+    <div class="spin-row">
+      <span class="spin-label">Типичная ошибка</span>
+      <p class="spin-text">Замачивают в тазу с «нежной» капсулой. Трут пятно. Потом отжимают, скручивая. Сушат на горизонтальной поверхности — или на плечиках.</p>
+    </div>
+
+    <div class="spin-row">
+      <span class="spin-label danger">Что происходит с тканью</span>
+      <p class="spin-text">Кашемировое волокно покрыто микроскопическими чешуйками, как еловая шишка. Тёплая вода плюс механическое воздействие — чешуйки раскрываются и намертво сцепляются. Это <strong>свойлачивание</strong>. Оно необратимо. Свитер за 80 000 ₸ становится детским за один цикл. Дополнительно: большинство «нежных» порошков содержат <strong>протеазы</strong> — ферменты, расщепляющие белок. Шерсть и кашемир — это белок. Вы буквально перевариваете свою вещь.</p>
+    </div>
+
+    <div class="spin-row">
+      <span class="spin-label solution">Как решаем мы</span>
+      <p class="spin-text">Сухая чистка на основе <strong>перхлорэтилена</strong> — без воды вообще. Чешуйки не раскрываются, структура сохраняется. Для точечных загрязнений — ручная работа с pH-нейтральными составами под контролем технолога.</p>
+    </div>
+  </article>
+
+  <!-- 2. ШЁЛК -->
+  <article class="fabric-block">
+    <p class="fabric-num">02 / 05</p>
+    <h2 class="fabric-name">Натуральный шёлк</h2>
+
+    <div class="spin-row">
+      <span class="spin-label">Типичная ошибка</span>
+      <p class="spin-text">Локально заливают пятно холодной водой и трут. Или — популярный совет из интернета — замачивают в воде с уксусом «для закрепления цвета».</p>
+    </div>
+
+    <div class="spin-row">
+      <span class="spin-label danger">Что происходит с тканью</span>
+      <p class="spin-text">Шёлк имеет треугольное поперечное сечение волокна — именно это даёт блеск. При локальном намокании вода проникает неравномерно, меняет натяжение нитей. После высыхания остаётся <strong>постоянный водяной контур</strong>. Не пятно от грязи — пятно от воды. В домашних условиях убрать его невозможно. Уксус — кислота. Шёлк разрушается в кислой среде. «Закрепить цвет» уксусом — городской миф из эпохи анилиновых красителей XIX века.</p>
+    </div>
+
+    <div class="spin-row">
+      <span class="spin-label solution">Как решаем мы</span>
+      <p class="spin-text">Аквачистка в специализированном оборудовании с <strong>контролируемым увлажнением всего изделия одновременно</strong> — никаких локальных пятен от воды. Для деликатных принтов — исключительно сухая чистка перхлором.</p>
+    </div>
+  </article>
+
+  <!-- 3. ПУХ / МЕМБРАНА -->
+  <article class="fabric-block">
+    <p class="fabric-num">03 / 05</p>
+    <h2 class="fabric-name">Пуховики и мембранные куртки</h2>
+
+    <div class="spin-row">
+      <span class="spin-label">Типичная ошибка</span>
+      <p class="spin-text">Стирают в машине на деликатном режиме. Сушат на батарее или балконе. Пух слипается в комки — изделие теряет форму и тепло навсегда.</p>
+    </div>
+
+    <div class="spin-row">
+      <span class="spin-label danger">Что происходит с тканью</span>
+      <p class="spin-text">Пух — не вата. Каждое пёрышко имеет трёхмерную структуру с воздушными карманами. Эти карманы и создают тепло. После стирки без специальных шаров пёрышки склеиваются жировыми выделениями и «запекаются» у батареи комками в нижней части куртки. Мембрана (Gore-Tex и аналоги): обычный порошок <strong>забивает поры</strong>. Куртка перестаёт дышать — навсегда. DWR-покрытие после домашней стирки требует реактивации, иначе вода уже не скатывается, а впитывается.</p>
+    </div>
+
+    <div class="spin-row">
+      <span class="spin-label solution">Как решаем мы</span>
+      <p class="spin-text">Стирка с составами, совместимыми с мембраной. Сушка в барабане с теннисными шарами для восстановления объёма пуха. <strong>Термо-реактивация DWR-покрытия.</strong> Куртка выходит как из магазина.</p>
+    </div>
+  </article>
+
+  <!-- 4. ВИСКОЗА -->
+  <article class="fabric-block">
+    <p class="fabric-num">04 / 05</p>
+    <h2 class="fabric-name">Вискоза</h2>
+
+    <div class="spin-row">
+      <span class="spin-label">Типичная ошибка</span>
+      <p class="spin-text">Думают: «Это же не шёлк, можно в машину». Стирают при 30° в щадящем режиме. Вещь садится или деформируется.</p>
+    </div>
+
+    <div class="spin-row">
+      <span class="spin-label danger">Что происходит с тканью</span>
+      <p class="spin-text">Вискоза — искусственное волокно из целлюлозы. В сухом состоянии крепкая. В мокром — <strong>теряет до 50–70% прочности</strong>. Это не дефект конкретной вещи, это химическая природа материала. Механика машины на мокром волокне растягивает его намертво. Трикотаж из вискозы после одной машинной стирки может вырасти в длину на 10–15 см — или сесть так, что не налезет на плечи.</p>
+    </div>
+
+    <div class="spin-row">
+      <span class="spin-label solution">Как решаем мы</span>
+      <p class="spin-text">Ручная или аквачистка с минимальным механическим воздействием. Отжим без скручивания, сушка строго горизонтально в исходной форме. Для деформированных изделий — реставрационная заутюжка с паром.</p>
+    </div>
+  </article>
+
+  <!-- 5. КОЖА + ТЕКСТИЛЬ -->
+  <article class="fabric-block">
+    <p class="fabric-num">05 / 05</p>
+    <h2 class="fabric-name">Кожа + текстиль в одном изделии</h2>
+
+    <div class="spin-row">
+      <span class="spin-label">Типичная ошибка</span>
+      <p class="spin-text">Пятно на текстильной части — протирают влажной губкой, не думая о кожаных вставках рядом.</p>
+    </div>
+
+    <div class="spin-row">
+      <span class="spin-label danger">Что происходит с тканью</span>
+      <p class="spin-text">Натуральная кожа — живой материал с жировой пропиткой. Вода вымывает эти жиры. После высыхания кожа жёсткая, появляются трещины. Анилиновая кожа (самая дорогая, без покрытия) реагирует особенно остро: вода оставляет на ней тёмные пятна, которые не убираются. Разные части изделия требуют <strong>разных температур и составов</strong> — то, что безопасно для ткани, разрушает кожу.</p>
+    </div>
+
+    <div class="spin-row">
+      <span class="spin-label solution">Как решаем мы</span>
+      <p class="spin-text">Каждый участок обрабатывается отдельно. Кожа — специализированными очистителями с кондиционированием. Текстиль — аквачисткой или перхлором в зависимости от состава волокна. Фурнитура защищается индивидуально. Это <strong>реставрационный подход</strong>, а не стирка.</p>
+    </div>
+  </article>
+
+  <!-- ── CTA ── -->
+  <div class="cta-block">
+    <p class="cta-eyebrow">Пятн.OFF · Астана</p>
+    <h2>Есть вещь, за которую вы переживаете?</h2>
+    <p>Пришлите фото в WhatsApp — технолог бесплатно оценит состояние и честно скажет, что можно сделать. Без обязательств.</p>
+
+    <a class="wa-btn-main" href="https://wa.me/77750610610?text=Здравствуйте%2C+хочу+проконсультироваться+по+уходу+за+вещью.+Прикладываю+фото." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Написать технологу
+    </a>
+
+    <hr class="cta-divider">
+    <p class="cta-alt">Или позвонить: <a href="tel:+77750610610">+7 775 061 0610</a></p>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p>© Пятн.OFF — химчистка, Астана<br>Гайд распространяется бесплатно. Поделитесь с тем, кому нужно.</p>
+</footer>
+
+<script>
+  // Scroll-triggered reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fabric-block, .cta-block').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
